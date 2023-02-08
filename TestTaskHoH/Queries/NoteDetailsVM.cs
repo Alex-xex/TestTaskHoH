@@ -8,6 +8,7 @@ namespace TestTaskHoH.Queries
 {
     public class NoteDetailsVM : IMapWith<NoteEntity>
     {
+
         public DateTime CreatedDateTime { get; set; }
         public DateTime? UpdatedDateTime { get; set; }
         public string Title { get; set; }

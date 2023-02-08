@@ -9,14 +9,16 @@ using System.Collections.ObjectModel;
 using View.Model;
 using System.Net.Http;
 using System.Net.Http.Json;
+using View.Reader;
+
 namespace View.ViewModel
 {
     public class NotesVM : INotifyPropertyChanged
     {
         private Note _selectedNote;
         static HttpClient httpClient = new HttpClient();
-        public ObservableCollection<Note> Notes { get; set; }
-        
+        //public ObservableCollection<Note> Notes { get; set; }
+        public Notes notes { get; set; }
 
         // команда удаления
         private RelayCommand removeCommand;
@@ -25,15 +27,17 @@ namespace View.ViewModel
             get
             {
                 return removeCommand ??
-                  (removeCommand = new RelayCommand(obj =>
+                  (removeCommand = new RelayCommand(async obj =>
                   {
-                      Note note = obj as Note;
+                      Note note = SelectedNote;
                       if (note != null)
                       {
+                          string noteid = note.Id.ToString();
+                          using var response = await httpClient.DeleteAsync("https://localhost:5001/api/note/{noteid}");
                           Notes.Remove(note);
                       }
                   },
-                 (obj) => Notes.Count > -1));
+                 (obj) => Notes.Count > 0));
             }
         }
 
@@ -67,12 +71,12 @@ namespace View.ViewModel
         }
 
         public NotesVM()
-        {
-            object? data = httpClient.GetFromJsonAsync("https://localhost:5001/api/note", typeof(Note));
-            if(data is IList<Note> && data !=null)
-            {
-                Notes = (ObservableCollection<Note>?)data;
-            }
+        {         
+            var currencyRates = Reader.Reader._download_serialized_json_data<Notes>("https://localhost:5001/api/note");
+
+            Notes = new ObservableCollection<Note>(currencyRates.notes);
+
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

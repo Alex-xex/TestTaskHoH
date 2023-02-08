@@ -25,7 +25,15 @@
                 <DropShadowEffect BlurRadius="20" Color="#4671D5" ShadowDepth="0"></DropShadowEffect>
             </Border.Effect>
             <StackPanel>
-                <ListBox MinWidth="300" Height="210" ItemsSource="{Binding Notes}" SelectedItem="{Binding SelectedNote}" />
+                <ListBox MinWidth="300" Height="210" ItemsSource="{Binding Notes}" SelectedItem="{Binding SelectedNote}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
                 <Button Content="Изменить" Margin="0 5" Cursor="Hand" Background="#1240AB"/>
                 <Button Content="Удалить" Command="{Binding RemoveCommand}" Margin="0 5" Cursor="Hand" Background="#1240AB"/>
             </StackPanel>

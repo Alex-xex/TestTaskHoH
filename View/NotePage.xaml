@@ -36,7 +36,7 @@
                     </TextBox.Resources>
                 </TextBox>
                 <TextBox Text="{Binding Info, UpdateSourceTrigger=PropertyChanged}" Height="210" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-                <Button Content="Сохранить" Command="{Binding AddCommand}" Margin="0 20" Cursor="Hand" Background="#1240AB" />
+                <Button Content="Сохранить" Command="{Binding AddCommand}" Margin="0 20" Cursor="Hand" Background="#1240AB" Click="Button_Click_1" />
             </StackPanel>
         </Border>
 

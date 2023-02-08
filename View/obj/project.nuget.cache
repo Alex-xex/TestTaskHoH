@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r11bhogqpeY/K53GoD8ouHOus/IEN2DRha2v3iad4fWaea0Qo3s7Dv/df+ahbBfdJJBQIcoELTCKS7pfvgYDOg==",
+  "dgSpecHash": "Hy96qHXPu3X/EDN6cWX1Ydfwe+gAKeU+ujO/RVESZd/az478OtzLvMy+sTYA9JiWc2rV5cNMD2Oj0driJGnIMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Алекс\\source\\repos\\View\\View.csproj",
+  "projectFilePath": "D:\\Github\\TestTaskHoH\\View\\View.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Алекс\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
     "C:\\Users\\Алекс\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
@@ -14,6 +14,7 @@
     "C:\\Users\\Алекс\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\Алекс\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Алекс\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\Алекс\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\Алекс\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
     "C:\\Users\\Алекс\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
     "C:\\Users\\Алекс\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",

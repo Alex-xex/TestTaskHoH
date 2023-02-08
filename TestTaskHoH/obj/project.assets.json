@@ -1273,11 +1273,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Алекс\\source\\repos\\TestTaskHoH\\TestTaskHoH.csproj",
+      "projectUniqueName": "D:\\Github\\TestTaskHoH\\TestTaskHoH\\TestTaskHoH.csproj",
       "projectName": "TestTaskHoH",
-      "projectPath": "C:\\Users\\Алекс\\source\\repos\\TestTaskHoH\\TestTaskHoH.csproj",
+      "projectPath": "D:\\Github\\TestTaskHoH\\TestTaskHoH\\TestTaskHoH.csproj",
       "packagesPath": "C:\\Users\\Алекс\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Алекс\\source\\repos\\TestTaskHoH\\obj\\",
+      "outputPath": "D:\\Github\\TestTaskHoH\\TestTaskHoH\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -33,5 +33,12 @@ namespace View
             listNotes.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ListNotes listNotes = new ListNotes();
+            listNotes.Show();
+            this.Close();
+        }
     }
 }

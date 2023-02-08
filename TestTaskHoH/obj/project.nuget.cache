@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MEWb/2kcGVE/XgwYjL5VFgQfDLmDAnpXenecFu/2E9L4obx6PVGYmejfdJIsuCwtAP7+03UjR6Wx1vZme5J8dg==",
+  "dgSpecHash": "KH1a4kooq6bH73dZVYdw5rGVET4jXCLCLRD5+QZ/TibyZOwInEgUlkZLwMqrci7hnedC78wyyxAxfgBIryHPUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Алекс\\source\\repos\\TestTaskHoH\\TestTaskHoH.csproj",
+  "projectFilePath": "D:\\Github\\TestTaskHoH\\TestTaskHoH\\TestTaskHoH.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Алекс\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Алекс\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

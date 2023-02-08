@@ -14,11 +14,16 @@ namespace View.Model
     public class Note : INotifyPropertyChanged
     {
 
-
+        private Guid _id;
         private string title;
         private string info;
         private bool actual;
 
+        public Guid Id 
+        {
+            get 
+            { return _id; }         
+        }
         public string Title
         {
             get { return title; }
