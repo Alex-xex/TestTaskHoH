@@ -57,7 +57,7 @@ namespace View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/View;component/notepage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/View;V1.0.0.0;component/notepage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\NotePage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
