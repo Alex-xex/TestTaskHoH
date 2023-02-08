@@ -23,29 +23,9 @@ namespace View
     {
         public NoteUpdate()
         {
-            InitializeComponent();
-            DataContext = new NoteVM(new Model.Note { });
+            InitializeComponent();          
+            DataContext = new NoteVM(Locator.LocatorSingle.note);
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ListNotes listNotes = new ListNotes();
-            listNotes.Show();
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            ListNotes listNotes = new ListNotes();
-            listNotes.Show();
-            this.Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            NotePage listNotes = new NotePage();
-            listNotes.Show();
-            this.Close();
-        }
+        
     }
 }

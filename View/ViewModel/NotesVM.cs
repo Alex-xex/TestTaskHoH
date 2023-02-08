@@ -10,12 +10,13 @@ using View.Model;
 using System.Net.Http;
 using System.Net.Http.Json;
 using View.Reader;
+using System.Windows;
 
 namespace View.ViewModel
 {
     public class NotesVM : INotifyPropertyChanged
     {
-        private Note _selectedNote;
+        private  Note _selectedNote;
         private ObservableCollection<Note> _notes;
 
         static HttpClient httpClient = new HttpClient();
@@ -27,8 +28,7 @@ namespace View.ViewModel
                 _notes = value;
                 OnPropertyChanged("Notes");
             }
-        }
-        public Notes notes { get; set; }
+        }     
 
         // команда удаления
         private RelayCommand removeCommand;
@@ -51,22 +51,43 @@ namespace View.ViewModel
             }
         }
 
-        // команда апдейта
-        RelayCommand? updateCommand;
-        public RelayCommand UpdateCommand
+        private RelayCommand changeCommand;
+        public RelayCommand ChangeCommand
         {
             get
             {
-                return updateCommand ??
-                    (updateCommand = new RelayCommand(obj =>
-                    {
-                        Note? note = obj as Note;
-                        if (note != null)
-                        {
-                            Note updatednote = new Note();
-                            Notes.Insert(0, updatednote);
-                        }
-                    }));
+                return changeCommand ??
+                  (changeCommand = new RelayCommand(async obj =>
+                  {
+                      Locator.LocatorSingle.note = SelectedNote;
+                      if (Locator.LocatorSingle.note != null)
+                      {
+                          Guid noteid = Locator.LocatorSingle.note.Id;
+                          string noteref = "https://localhost:5001/api/note/" + noteid.ToString();
+                          Locator.LocatorSingle.note = Reader.Reader._download_serialized_json_data<Note>(noteref);
+                          Locator.LocatorSingle.note.Id = noteid;
+                          var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+                          NoteUpdate updatePage = new NoteUpdate();
+                          updatePage.Show();
+                          window.Close();
+                      }
+                  }));
+            }
+        }
+
+        private RelayCommand changePageNew;
+        public RelayCommand ChangePageNew
+        {
+            get
+            {
+                return changePageNew ??
+                  (changePageNew = new RelayCommand(async obj =>
+                  {
+                      var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+                      NotePage notePage = new NotePage();
+                      notePage.Show();
+                      window.Close();
+                  }));
             }
         }
 
@@ -76,6 +97,7 @@ namespace View.ViewModel
             set
             {
                 _selectedNote = value;
+                Locator.LocatorSingle.note = value;
                 OnPropertyChanged("SelectedNote");
             }
         }

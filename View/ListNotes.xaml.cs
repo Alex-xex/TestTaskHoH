@@ -26,12 +26,6 @@ namespace View
             InitializeComponent();
             DataContext = new NotesVM();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            NotePage notePage = new NotePage();
-            notePage.Show();
-            this.Close();
-        }
+    
     }
 }

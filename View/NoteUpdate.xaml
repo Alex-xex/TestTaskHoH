@@ -17,8 +17,8 @@
                 <DropShadowEffect BlurRadius="20" Color="#4671D5" ShadowDepth="0"></DropShadowEffect>
             </Border.Effect>
             <Grid>
-                <Button MinWidth="30" Width="300" HorizontalAlignment="Left" Content="Новая заметка" Background="#1240AB"  Foreground="White" Cursor="Hand" Click="Button_Click_2" />
-                <Button MinWidth="30" Width="300" HorizontalAlignment="Right" Content="Список заметок"  Background="#1240AB"  Foreground="White" Cursor="Hand" Click="Button_Click_1" />
+                <Button MinWidth="30" Width="300" Command="{Binding ChangePageNew}" HorizontalAlignment="Left" Content="Новая заметка" Background="#1240AB"  Foreground="White" Cursor="Hand"  />
+                <Button MinWidth="30" Width="300" Command="{Binding ChangePageList}" HorizontalAlignment="Right" Content="Список заметок"  Background="#1240AB"  Foreground="White" Cursor="Hand"  />
             </Grid>
         </Border>
         <Border MinWidth="300" Margin="15,90,15,5" Background="White" VerticalAlignment="Bottom"  Padding="30" MaxWidth="800" CornerRadius="15" Height="350">
@@ -37,7 +37,7 @@
                     </TextBox.Resources>
                 </TextBox>
                 <TextBox Text="{Binding Info, UpdateSourceTrigger=PropertyChanged}" Height="210" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-                <Button Content="Сохранить" Command="{Binding UpdateCommand}" Margin="0 20" Cursor="Hand" Background="#1240AB" Click="Button_Click" />
+                <Button Content="Сохранить" Command="{Binding UpdateCommand}" Margin="0 20" Cursor="Hand" Background="#1240AB"  />
             </StackPanel>
         </Border>
 

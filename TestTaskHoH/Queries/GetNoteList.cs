@@ -8,8 +8,7 @@ namespace TestTaskHoH.Queries
     public class GetNoteList : IMapWith<NoteEntity>
     {
         public Guid Id { get; set; }
-        public string Title { get; set; }
-
+        public string Title { get; set; }      
         public void Mapping(Profile profile)
         {
             profile.CreateMap<NoteEntity, GetNoteList>()

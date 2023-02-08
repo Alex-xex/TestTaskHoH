@@ -26,19 +26,6 @@ namespace View
             InitializeComponent();
             DataContext = new NoteVM(new Model.Note { });
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ListNotes listNotes = new ListNotes();
-            listNotes.Show();
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            ListNotes listNotes = new ListNotes();
-            listNotes.Show();
-            this.Close();
-        }
+     
     }
 }
