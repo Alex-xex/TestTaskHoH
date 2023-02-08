@@ -22,7 +22,12 @@ namespace View.Model
         public Guid Id 
         {
             get 
-            { return _id; }         
+            { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged("Id");
+            }
         }
         public string Title
         {

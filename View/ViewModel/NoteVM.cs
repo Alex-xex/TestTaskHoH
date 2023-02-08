@@ -19,6 +19,7 @@ namespace View.ViewModel
         public NoteVM(Note n)
         {
             _note = n;
+            
         }
 
         public string Title
@@ -62,7 +63,7 @@ namespace View.ViewModel
                       note.Title = _note.Title;
                       note.Info = _note.Info;
                       using var response = await httpClient.PostAsJsonAsync("https://localhost:5001/api/note", note);
-                      
+                  
                   }));
             }
         }

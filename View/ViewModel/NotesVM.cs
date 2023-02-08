@@ -16,8 +16,18 @@ namespace View.ViewModel
     public class NotesVM : INotifyPropertyChanged
     {
         private Note _selectedNote;
+        private ObservableCollection<Note> _notes;
+
         static HttpClient httpClient = new HttpClient();
-        //public ObservableCollection<Note> Notes { get; set; }
+        public ObservableCollection<Note> Notes 
+        {
+            get { return _notes; }
+            set
+            {
+                _notes = value;
+                OnPropertyChanged("Notes");
+            }
+        }
         public Notes notes { get; set; }
 
         // команда удаления
@@ -32,8 +42,8 @@ namespace View.ViewModel
                       Note note = SelectedNote;
                       if (note != null)
                       {
-                          string noteid = note.Id.ToString();
-                          using var response = await httpClient.DeleteAsync("https://localhost:5001/api/note/{noteid}");
+                          string noteid = "https://localhost:5001/api/note/" + note.Id.ToString();
+                          using var response = await httpClient.DeleteAsync(noteid);
                           Notes.Remove(note);
                       }
                   },
@@ -53,7 +63,7 @@ namespace View.ViewModel
                         Note? note = obj as Note;
                         if (note != null)
                         {
-                            Note updatednote = new Note();                           
+                            Note updatednote = new Note();
                             Notes.Insert(0, updatednote);
                         }
                     }));
@@ -72,10 +82,9 @@ namespace View.ViewModel
 
         public NotesVM()
         {         
-            var currencyRates = Reader.Reader._download_serialized_json_data<Notes>("https://localhost:5001/api/note");
-
+            var currencyRates = Reader.Reader._download_serialized_json_data<Notes>("https://localhost:5001/api/note");       
             Notes = new ObservableCollection<Note>(currencyRates.notes);
-
+            Console.Write("");
             
         }
 
